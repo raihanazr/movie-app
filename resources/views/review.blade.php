@@ -24,54 +24,54 @@
         <div class="flex flex-col gap-10">
             <!-- ====== Table Two Start -->
             <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-                <div class="grid grid-cols-8 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-6 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
+                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+                    <div class="col-span-3 flex items-center">
                         <p class="font-medium">ID</p>
                     </div>
                     <div class="col-span-1 items-center sm:flex">
-                        <p class="font-medium">Movie</p>
+                        <p class="font-medium">movie</p>
                     </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="font-medium">User</p>
+                    <div class="col-span-1 items-center sm:flex">
+                        <p class="font-medium">user</p>
                     </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="font-medium">Rating</p>
+                    <div class="col-span-1 items-center sm:flex">
+                        <p class="font-medium">rating</p>
                     </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="font-medium">Date</p>
+                    <div class="col-span-1 items-center sm:flex">
+                        <p class="font-medium">date</p>
                     </div>
                     <div class="col-span-1 flex items-center">
                         <p class="font-medium">Actions</p>
                     </div>
                 </div>
-
-                <div class="grid grid-cols-8 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-6 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
+                @foreach ($reviews as $review)
+                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+                    <div class="col-span-3 flex items-center">
                         <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                           
+                            
                             <p class="text-sm font-medium text-black dark:text-white">
-                                01
+                            {{ $review['id'] }}
                             </p>
                         </div>
                     </div>
                     <div class="col-span-1 items-center sm:flex">
                         <p class="text-sm font-medium text-black dark:text-white">
-                            Doraemon
+                        {{ $review['movie'] }}   
                         </p>
                     </div>
-                    <div class="col-span-1 items-center sm:flex">
+                    <div class="col-span-3 flex items-center">
                         <p class="text-sm font-medium text-black dark:text-white">
-                            Raina
+                        {{ $review['user'] }}
                         </p>
                     </div>
-                    <div class="col-span-1 items-center sm:flex">
+                    <div class="col-span-3 flex items-center">
                         <p class="text-sm font-medium text-black dark:text-white">
-                            8,4/10
+                        {{ $review['rating'] }}
                         </p>
                     </div>
-                    <div class="col-span-1 flex items-center">
+                    <div class="col-span-3 flex items-center">
                         <p class="text-sm font-medium text-black dark:text-white">
-                            April 15 2005
+                        {{ $review['date'] }}
                         </p>
                     </div>
                     <div class="col-span-1 flex items-center">
@@ -81,146 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-8 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-6 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                            <p class="text-sm font-medium text-black dark:text-white">
-                                02
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            Attack on Titan
-                        </p>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                          Hana  
-                        </p>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            9,1/10
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                           April 07 2013
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex items-center space-x-1">
-                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-8 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-6 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center"> 
-                            <p class="text-sm font-medium text-black dark:text-white">
-                                03
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            Jujutsu Kaisen
-                        </p>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            Aulia
-                        </p>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            8,6/10
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            October 03 2020
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex items-center space-x-1">
-                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-8 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-6 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">   
-                            <p class="text-sm font-medium text-black dark:text-white">
-                                04
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            One Piece
-                        </p>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                           Ivan
-                        </p>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            9/10
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            October 20 1999
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex items-center space-x-1">
-                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-8 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-6 md:px-6 2xl:px-7.5">
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">  
-                            <p class="text-sm font-medium text-black dark:text-white">
-                                05
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            Naruto
-                        </p>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            Leon
-                        </p>
-                    </div>
-                    <div class="col-span-1 items-center sm:flex">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            8,4/10
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <p class="text-sm font-medium text-black dark:text-white">
-                            October 02 2000
-                        </p>
-                    </div>
-                    <div class="col-span-1 flex items-center">
-                        <div class="flex items-center space-x-1">
-                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <!-- ====== Table Two End -->
