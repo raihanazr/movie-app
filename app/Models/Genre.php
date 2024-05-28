@@ -10,5 +10,6 @@ class Genre extends Model
     use HasFactory;
     
     
+
     
 }
