@@ -57,11 +57,11 @@
                             Review Form
                         </h3>
                     </div>
-                    <form action="/review" method="POST">
+                    <form action="/reviews/{{ $review->id }}" method="POST">
                         @csrf
-                       
+                        @method('PUT')
                         <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white"> Genre <span class="text-meta-1">*</span> </label>
+                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">   Genre <span class="text-meta-1">*</span> </label>
                                 <div x-data="{ isOptionSelected: false }" class="relative z-20 bg-transparent dark:bg-form-input">
                                     <select
                                         id="movie_id"
@@ -71,10 +71,10 @@
                                         @change="isOptionSelected = true"
                                     >
                                         <option value="" class="text-body">
-                                            Type your movie
+                                            Type your genre
                                         </option>
-                                        @foreach ($movies as $movie)
-                                            <option value="{{ $movie->id }}">{{ $movie->title }}</option>
+                                        @foreach ($genres as $genre)
+                                            <option value="{{ $genre->id }}" {{ $genre->id == $review->genre_id ? 'selected' : '' }}>{{ $genre->name }}</option>
                                         @endforeach
                                     </select>
                                     <span class="absolute right-4 top-1/2 z-30 -translate-y-1/2">
@@ -91,30 +91,30 @@
                                     </span>
                                 </div>
                             </div>
-
-
-
+                        
                         <div class="p-6.5">
                             <div class="mb-4.5">
                                 <label class="mb-3 block text-sm font-medium text-black dark:text-white"> User <span class="text-meta-1">*</span> </label>
                                 <input
                                     id="user"
                                     name="user"
+                                    value="{{$review->title}}"
                                     type="text"
                                     placeholder="Enter anime title"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                                 />
                             </div>
 
-
+                           
                             <div class="mb-4.5">
                                 <label class="mb-3 block text-sm font-medium text-black dark:text-white"> 
-                                    Rating
+                                    Rating 
                                     <span class="text-meta-1">*</span> 
                                 </label>
                                 <input
                                     id="rating"
                                     name="rating"
+                                    value="{{$review->rating}}"
                                     type="text"
                                     placeholder="Enter poster link"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -129,9 +129,9 @@
                                     rows="6"
                                     placeholder="Type anime synopsis"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                                ></textarea>
+                                >{{$review->date}}</textarea>
                             </div>
-
+                            
                             <button type="submit" class="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
                                 Save Data
                             </button>

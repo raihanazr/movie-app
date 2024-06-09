@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Movie;
 use App\Models\Review;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -33,12 +34,32 @@ class ReviewController extends Controller
         
         Review::create($validatedData);
         
-        return redirect('/review')->with('success', 'Movie added successfully!');
+        return redirect('/review')->with('success', 'Review added successfully!');
+    }
+
+    public function edit(Review $review)
+    {
+        $genres = Genre::all();
+        return view('reviews.edit', compact('review', 'genres'));
+    }
+
+    public function update(Request $request, Review $review)
+    {
+        $validatedData = $request->validate([
+            'movie_id' => 'required',
+            'user' => 'required',
+            'rating' => 'required',
+            'date' => 'required',
+        ]);
+
+        $review->update($validatedData);
+
+        return redirect('/reviews')->with('success', 'Review updated successfully!');
     }
 
     public function destroy(Review $review)
     {
         $review->delete();
-        return redirect('/review')->with('success', 'Movie deleted successfully!');
+        return redirect('/review')->with('success', 'Review deleted successfully!');
     }
 }
