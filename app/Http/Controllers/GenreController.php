@@ -15,8 +15,7 @@ class GenreController extends Controller
     }
 
     public function create()
-    {
-       
+    { 
         
         return view('genres.create');
     
@@ -51,7 +50,6 @@ class GenreController extends Controller
     
         return redirect('/genres')->with('success', 'Genre updated successfully!');
     }
-
 
     public function destroy(Genre $genre)
     {
